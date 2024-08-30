@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙲𝚊𝚕𝚌𝚞𝚕𝚊𝚍𝚘𝚛𝚊</title>
+    <title>Calculadora</title>
     <style>
         *{
             margin: 0;
             padding: 0;
         }
         .fundo{
-            background-color: #000056;
+            background-color: darkblue;
             height: 100vh;
             color: #fff;
             font-family: Arial, Helvetica, sans-seri;
@@ -22,70 +22,70 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 15px;
+            padding: 15px;
         }
-        .botao{          
-            width: 60px;
-            height: 60px;
-            font-size: 46px;
+        .botao{
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
             cursor: pointer;
-            margin: 8px;
+            margin: 3px;
             background-color: rgb(31,31,31);
-            border: k;
+            border: 15xp;
             border-radius: 15px;
             color: #fff;
         }
         .botao:hover{
-            background-color: black;
+            background-color: darkblue;
         }
         #resultado{
             background-color: white;
-            width: 250px;
+            width: 207px;
             height: 30px;
             margin: 5px;
-            font-size: 30px;
+            font-size: 25px;
             border-radius: 15px;
             color: black;
             text-align: right;
-            padding: 20px;
+            padding: 5px;
         }
-    </style>
+      </style>
 </head>
 <body>
     <div class="fundo">
-        <h1>𝐶𝑎𝑙𝑐𝑢𝑙𝑎𝑑𝑜𝑟𝑎 3.0 (𝙱𝚎𝚝𝚊)</h1>
+        <h1>ᑕᗩᒪᑕᑌᒪᗩᗪOᖇᗩ 4.0</h1>
         <div class="calculadora">
-            <h1>𝙲𝚊𝚕𝚌𝚞𝚕𝚊𝚍𝚘𝚛𝚊</h1>
+            <h2>ᑕᗩᒪᑕᑌᒪᗩᗪOᖇᗩ</h2>
             <p id="resultado"></p>
             <table>
                 <tr>
-                    <td><button class="botao" onclick="clean()">C</button></td>
-                    <td><button class="botao" onclick="back()"><</button></td>
-                    <td><button class="botao" onclick="insert('/')">/</button></td>
-                    <td><button class="botao" onclick="insert('*')">×</button></td>
+                    <td><button class="botao" onclick="clean()">𝐂</button></td>
+                    <td><button class="botao" onclick="back()">⌫</button></td>
+                    <td><button class="botao" onclick="insert('/')">➗</button></td>
+                    <td><button class="botao" onclick="insert('*')">✘</button></td>
                 </tr>
                 <tr>
                     <td><button class="botao" onclick="insert('7')">7</button></td>
                     <td><button class="botao" onclick="insert('8')">8</button></td>
                     <td><button class="botao" onclick="insert('9')">9</button></td>
-                    <td><button class="botao" onclick="insert('-')">-</button></td>
+                    <td><button class="botao" onclick="insert('-')">➖</button></td>
                 </tr>
                 <tr>
                     <td><button class="botao" onclick="insert('4')">4</button></td>
                     <td><button class="botao" onclick="insert('5')">5</button></td>
                     <td><button class="botao" onclick="insert('6')">6</button></td>
-                    <td><button class="botao" onclick="insert('+')">+</button></td>
+                    <td><button class="botao" onclick="insert('+')">➕</button></td>
                 </tr>
                 <tr>
                     <td><button class="botao" onclick="insert('1')">1</button></td>
                     <td><button class="botao" onclick="insert('2')">2</button></td>
                     <td><button class="botao" onclick="insert('3')">3</button></td>
-                    <td rowspan="2"><button class="botao" style="height: 106px;" onclick="calcular()">=</button></td>
+                    <td rowspan="2"><button class="botao" style="height: 106px;" onclick="calcular()">⚌</button></td>
                 </tr>
                 <tr>
                     <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
-                    <td><button class="botao" onclick="insert('.')">.</button></td>
+                    <td><button class="botao" onclick="insert('.')">•</button></td>
                 </tr>
             </table>
         </div>
@@ -114,7 +114,7 @@
             }
             else
             {
-                document.getElementById('resultado').innerHTML = "Nadinha..."
+                document.getElementById('resultado').innerHTML = "Nada..."
             }
         }
     </script>
