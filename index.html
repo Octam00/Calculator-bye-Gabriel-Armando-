@@ -1,122 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .fundo{
+        .fundo {
             background-color: darkblue;
             height: 100vh;
             color: #fff;
-            font-family: Arial, Helvetica, sans-seri;
+            font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
-        .calculadora{
+        .calculadora {
             position: absolute;
             background-color: rgba(0, 0, 0, 0.8);
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             border-radius: 15px;
-            padding: 15px;
+            padding: 20px;
         }
-        .botao{
-            width: 50px;
-            height: 50px;
+        .botao {
+            width: 60px;
+            height: 60px;
             font-size: 25px;
             cursor: pointer;
-            margin: 3px;
-            background-color: rgb(31,31,31);
-            border: 15xp;
+            margin: 4px;
+            background-color: rgb(31, 31, 31);
             border-radius: 15px;
             color: #fff;
         }
-        .botao:hover{
+        .botao:hover {
             background-color: darkblue;
         }
-        #resultado{
+        #resultado {
             background-color: white;
-            width: 207px;
-            height: 30px;
-            margin: 5px;
-            font-size: 25px;
+            width: 318px;
+            font-size: 35px;
+            height: 40px;
+            margin: 8px;
             border-radius: 15px;
             color: black;
             text-align: right;
-            padding: 5px;
+            padding: 8px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
-      </style>
+    </style>
 </head>
 <body>
     <div class="fundo">
-        <h1>ᑕᗩᒪᑕᑌᒪᗩᗪOᖇᗩ 4.0</h1>
+        <h1>ᑕᗩᒪᑕᑌᒪᗩᗪ𝖮ᖇᗩ</h1>
+        <h18>5.0</h18>
         <div class="calculadora">
-            <h2>ᑕᗩᒪᑕᑌᒪᗩᗪOᖇᗩ</h2>
+            <h2>ᑕᗩᒪᑕᑌᒪᗩᗪ𝖮ᖇᗩ</h2>
             <p id="resultado"></p>
             <table>
                 <tr>
-                    <td><button class="botao" onclick="clean()">𝐂</button></td>
-                    <td><button class="botao" onclick="back()">⌫</button></td>
+                    <td><button class="botao" onclick="clean()"><span style="color: #fff; font-weight: 900;">𝑪</span></button></td>
+                    <td><button class="botao" onclick="back()"><span style="color: #fff; font-weight: 900;">⌫</span></button></td>
                     <td><button class="botao" onclick="insert('/')">➗</button></td>
                     <td><button class="botao" onclick="insert('*')">✖️</button></td>
+                    <td><button class="botao" onclick="insert('(')"><span style="color: #fff; font-weight: 900;">(</span></button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao" onclick="insert('7')">7</button></td>
-                    <td><button class="botao" onclick="insert('8')">8</button></td>
-                    <td><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="botao" onclick="insert('7')"><span style="color: #fff; font-weight: 900;">7</span></button></td>
+                    <td><button class="botao" onclick="insert('8')"><span style="color: #fff; font-weight: 900;">8</span></button></td>
+                    <td><button class="botao" onclick="insert('9')"><span style="color: #fff; font-weight: 900;">9</span></button></td>
                     <td><button class="botao" onclick="insert('-')">➖</button></td>
+                    <td><button class="botao" onclick="insert(')')"><span style="color: #fff; font-weight: 900;">)</span></button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao" onclick="insert('4')">4</button></td>
-                    <td><button class="botao" onclick="insert('5')">5</button></td>
-                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="botao" onclick="insert('4')"><span style="color: #fff; font-weight: 900;">4</span></button></td>
+                    <td><button class="botao" onclick="insert('5')"><span style="color: #fff; font-weight: 900;">5</span></button></td>
+                    <td><button class="botao" onclick="insert('6')"><span style="color: #fff; font-weight: 900;">6</span></button></td>
                     <td><button class="botao" onclick="insert('+')">➕</button></td>
+                    <td><button class="botao" onclick="sqrt()"><span style="color: #fff; font-weight: 900;">√</span></button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao" onclick="insert('1')">1</button></td>
-                    <td><button class="botao" onclick="insert('2')">2</button></td>
-                    <td><button class="botao" onclick="insert('3')">3</button></td>
-                    <td rowspan="2"><button class="botao" style="height: 106px;" onclick="calcular()">🟰</button></td>
+                    <td><button class="botao" onclick="insert('1')"><span style="color: #fff; font-weight: 900;">1</span></button></td>
+                    <td><button class="botao" onclick="insert('2')"><span style="color: #fff; font-weight: 900;">2</span></button></td>
+                    <td><button class="botao" onclick="insert('3')"><span style="color: #fff; font-weight: 900;">3</span></button></td>
+                    <td><button class="botao" onclick="insert('%')"><span style="color: #fff; font-weight: 900;">%</span></button></td>
+                    <td rowspan="2"><button class="botao" style="height: 130px;" onclick="calcular()">🟰</button></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
-                    <td><button class="botao" onclick="insert('.')">•</button></td>
+                    <td colspan="2"><button class="botao" style="width: 130px;" onclick="insert('0')"><span style="color: #fff; font-weight: 900;">0</span></button></td>
+                    <td><button class="botao" onclick="insert('.')"><span style="color: #fff; font-weight: 900;">.</span></button></td>
+                    <td><button class="botao" onclick="insertComma()"><span style="color: #fff; font-weight: 900;">,</span></button></td>
                 </tr>
             </table>
         </div>
     </div>
+    <audio id="clickSound" src="click.mp3"></audio> <!-- Adicionei o som aqui -->
     <script>
-        function insert(num)
-        {
-            var numero = document.getElementById('resultado').innerHTML;
-            document.getElementById('resultado').innerHTML = numero + num;
+        function playSound() {
+            var sound = document.getElementById('clickSound');
+            sound.currentTime = 0;  // Reinicia o som caso esteja no meio
+            sound.play();
         }
-        function clean()
-        {
+
+        function insert(num) {
+            playSound(); // Toca o som ao clicar
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML += num;
+            adjustFontSize();
+        }
+
+        function insertComma() {
+            playSound(); // Toca o som ao clicar
+            var resultado = document.getElementById('resultado');
+            var lastChar = resultado.innerHTML.slice(-1);
+
+            if (!isNaN(lastChar) && !resultado.innerHTML.includes(',')) {
+                resultado.innerHTML += ',';
+            }
+            adjustFontSize();
+        }
+
+        function clean() {
+            playSound(); // Toca o som ao clicar
             document.getElementById('resultado').innerHTML = "";
+            adjustFontSize();
         }
-        function back()
-        {
-            var resultado = document.getElementById('resultado').innerHTML;
-            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+
+        function back() {
+            playSound(); // Toca o som ao clicar
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML = resultado.innerHTML.slice(0, -1);
+            adjustFontSize();
         }
-        function calcular()
-        {
-            var resultado = document.getElementById('resultado').innerHTML;
-            if(resultado)
-            {
-                document.getElementById('resultado').innerHTML = eval(resultado);
+
+        function sqrt() {
+            playSound(); // Toca o som ao clicar
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML = 'Math.sqrt(' + resultado.innerHTML.replace(',', '.') + ')';
+            adjustFontSize();
+        }
+
+        function calcular() {
+            playSound(); // Toca o som ao clicar
+            var resultado = document.getElementById('resultado');
+            try {
+                resultado.innerHTML = eval(resultado.innerHTML.replace(/,/g, '.'));
+            } catch (e) {
+                resultado.innerHTML = "Erro";
             }
-            else
-            {
-                document.getElementById('resultado').innerHTML = "Nada..."
+            adjustFontSize();
+        }
+
+        function adjustFontSize() {
+            var resultado = document.getElementById('resultado');
+            var maxFontSize = 60; // Aumentei o tamanho da fonte inicial
+            var minFontSize = 10; // Tamanho da fonte mínimo
+            var fontSize = maxFontSize;
+
+            while (resultado.scrollWidth > resultado.clientWidth && fontSize > minFontSize) {
+                fontSize--;
+                resultado.style.fontSize = fontSize + 'px';
             }
         }
+        
     </script>
 </body>
 </html>
